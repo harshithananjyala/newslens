@@ -4,10 +4,7 @@
 
 Most search boxes only find text that contains your exact words. Ask for *"companies losing money"* and they miss an article titled *"Firm reports steep deficit"* — same idea, different words. NewsLens fixes that by understanding meaning as well as matching keywords, then blending the two into a single ranked result.
 
-![NewsLens screenshot](docs/screenshot.png)
-*(add a screenshot of the Compare view — see "Screenshot" below)*
 
----
 
 ## Why this exists
 
