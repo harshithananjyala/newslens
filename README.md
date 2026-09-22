@@ -34,7 +34,7 @@ flowchart LR
 ## Quickstart (macOS / Linux)
 
 ```bash
-git clone https://github.com/<your-username>/newslens.git
+git clone https://github.com/harshithananjyala/newslens.git
 cd newslens
 ./setup.sh                       # one-time: virtual env + dependencies
 source venv/bin/activate
