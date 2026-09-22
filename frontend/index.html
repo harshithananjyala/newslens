@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>NewsLens: search news by meaning</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <a class="skip" href="#results">Skip to results</a>
+
+  <header class="top">
+    <span class="brand">NewsLens</span>
+    <span class="stats" id="stats"></span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Search news by meaning</h1>
+      <p class="lede">Ask in your own words. NewsLens finds articles that say the same thing, even when they share none of your words.</p>
+
+      <form id="search-form" role="search" autocomplete="off">
+        <div class="field">
+          <label for="q" class="sr">Search query</label>
+          <input id="q" name="q" type="search" maxlength="300" placeholder="Try: companies losing money" spellcheck="false">
+          <button type="submit" class="go">Search</button>
+        </div>
+
+        <div class="controls">
+          <fieldset class="seg">
+            <legend class="sr">Search mode</legend>
+            <label><input type="radio" name="mode" value="hybrid" checked><span>Hybrid</span></label>
+            <label><input type="radio" name="mode" value="semantic"><span>Semantic</span></label>
+            <label><input type="radio" name="mode" value="keyword"><span>Keyword</span></label>
+            <label><input type="radio" name="mode" value="compare"><span>Compare all</span></label>
+          </fieldset>
+
+          <label class="topic">
+            <span>Topic</span>
+            <select id="topic">
+              <option value="">All topics</option>
+              <option>World</option>
+              <option>Sports</option>
+              <option>Business</option>
+              <option>Sci/Tech</option>
+            </select>
+          </label>
+        </div>
+        <p class="mode-help" id="mode-help"></p>
+      </form>
+
+      <div class="examples" id="examples">
+        <span>Examples</span>
+        <button type="button" class="chip">companies losing money</button>
+        <button type="button" class="chip">exploring other planets</button>
+        <button type="button" class="chip">athlete hurt before the big game</button>
+        <button type="button" class="chip">central bank raises interest rates</button>
+        <button type="button" class="chip">hackers steal customer data</button>
+      </div>
+    </section>
+
+    <section id="results" tabindex="-1" aria-labelledby="status">
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <div id="out"></div>
+    </section>
+  </main>
+
+  <footer>
+    Built with sentence-transformers, FAISS, BM25 and FastAPI. Press <kbd>/</kbd> to jump to the search box.
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
